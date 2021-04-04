@@ -189,14 +189,6 @@ def findRole(rr, model, specieId, reaction, nTest, valueIncrease):
     if assignmentRule is not None:
         return ModifiersRole.withAssignmentRule(rr, model, specieId, reaction, nTest, valueIncrease, assignmentRule)
 
-    """
-    #se non ho assignment rules
-    if model.getNumSpecies() == rr.model.getNumBoundarySpecies():
-        return ModifiersRole.withBoundary(rr, model, specie, reaction, nTest, valueIncrease)
-    elif model.getNumSpecies() == rr.model.getNumFloatingSpecies():
-        return ModifiersRole.withFloating(rr, model, specie, reaction, nTest, valueIncrease)
-    else:
-        """
     return ModifiersRole.withFloatingAndBoundary(rr, model, specieId, reaction, nTest, valueIncrease)
 
 
